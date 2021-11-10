@@ -1,0 +1,23 @@
+@import '../../../assets/styles/colores.scss';
+
+.main-footer {
+    background-color: $grisPrimario;
+    text-align: center;
+
+    &__bloque {
+        display: grid;
+        padding: 20px 0px;
+        grid-template-columns: repeat(3, 1fr);
+        border-bottom: 1px solid $grisSecundario;
+    }
+
+    a {
+        display: block;
+        line-height: 25px;
+    }
+
+    p {
+        padding: 25px 0px;
+        margin: 0;
+    }
+}

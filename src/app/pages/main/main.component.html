@@ -1,0 +1,35 @@
+<div class="hero"></div>
+
+<section class="contenedor categoria">
+    <h2>Categorías de Productos</h2>
+    <div class="categoria__contenido">
+        <div *ngFor="let category of categoryList" class="categoria__item">
+            <img src="../../assets/images/{{ category.image }}" alt="Imagen {{ category.name }}">
+            <a>{{ category.name }}</a>
+        </div>
+    </div>
+</section>
+
+<section class="nosotros">
+    <div class="nosotros__contenido contenedor">
+        <div class="nosotros__elemento">
+            <h2>Sobre Nosotros</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illo autem incidunt natus! Corrupti delectus enim mollitia veniam officia repellat harum optio sequi fugiat quae fuga aperiam, repellendus error dolores?</p>
+        </div>
+    </div>
+</section>
+
+<main class="productos contenedor">
+    <h2>Nuestros Productos</h2>
+    <div class="productos__lista">
+        <div *ngFor="let product of productList" class="productos__item">
+            <img src="../../assets/images/{{ product.image }}" alt="Imagen {{ product.name }}">
+            <div class="productos__texto">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <p class="productos__texto-precio">{{ product.price }}</p>
+                <a class="boton" href="#">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+</main>

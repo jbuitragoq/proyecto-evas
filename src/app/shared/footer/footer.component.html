@@ -1,0 +1,11 @@
+<footer class="main-footer">
+    <div class="main-footer__bloque contenedor">
+        <div *ngFor="let part of partList" id="{{ part.id }}">
+            <h3>{{ part.name }}</h3>
+            <nav>
+                <a href="#" *ngFor="let option of part.options">{{ option }}</a>
+            </nav>
+        </div>
+    </div>
+    <p>&copy; Todos los derechos reservados, TiendaMuebles</p>
+</footer>
