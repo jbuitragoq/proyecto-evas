@@ -1,0 +1,28 @@
+@import '../../../../assets/styles/colors.scss';
+
+.blog-detail {
+    padding: 0px 250px;
+
+    h2 {
+        text-align: center;
+    }
+
+    article {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+
+        .meta {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            p {
+                font-weight: 700;
+            }
+
+            span {
+                color: $base;
+            }
+        }
+    }
+}

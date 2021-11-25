@@ -1,1 +1,18 @@
-<p>detail works!</p>
+<div class="blog-detail container">
+    <article>
+        <header>
+            <h2>{{ article.title }}</h2>
+        </header>
+        <div class="image">
+            <img src="{{'../../../assets/images/' + article.image }}" alt="{{ article.imageTitle }}">
+        </div>
+        <div class="meta">
+            <p>Fecha: <span>{{ article.date }}</span></p>
+            <p>Escrito por: <span>{{ article.author }}</span></p>
+        </div>
+        <div class="article">
+            <p *ngFor="let paragraph of article.paragraphs">{{ paragraph }}</p>
+        </div>
+        <a class="button button__small" (click)="goBack()">Volver</a>
+    </article>
+</div>

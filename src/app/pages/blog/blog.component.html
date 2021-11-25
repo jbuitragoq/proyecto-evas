@@ -2,7 +2,7 @@
     <h2>Nuestro blog</h2>
     <section class="blog-page__container">
         <div class="blog-page__blog">
-            <article *ngFor="let article of listArticles">
+            <article *ngFor="let article of listArticlesDetail">
                 <header>
                     <h2>{{ article.title }}</h2>
                 </header>
@@ -16,13 +16,13 @@
                 <div class="article">
                     <p *ngFor="let paragraph of article.paragraphs">{{ paragraph }}</p>
                 </div>
-                <a class="button button__small" (click)="detailArticle()">Leer</a>
+                <a class="button button__small" (click)="detailArticle(article.id)">Leer</a>
             </article>
         </div>
         <aside>
             <h3>Otras entradas de blog</h3>
             <ul>
-                <li *ngFor="let item of otherArticles">{{ item }}</li>
+                <li *ngFor="let item of listArticles">{{ item }}</li>
             </ul>
         </aside>
     </section>
