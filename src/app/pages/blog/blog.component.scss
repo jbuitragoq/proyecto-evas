@@ -1,0 +1,37 @@
+@import '../../../assets/styles/colors.scss';
+
+.blog-page {
+    h2 {
+        text-align: center;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 40px;
+    }
+
+    article {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 2px solid $grayMedium;
+
+        .meta {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            p {
+                font-weight: 700;
+            }
+
+            span {
+                color: $base;
+            }
+        }
+
+        &:last-of-type {
+            border: none;
+        }
+    }
+}

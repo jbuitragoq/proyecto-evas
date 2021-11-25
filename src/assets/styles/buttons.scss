@@ -1,0 +1,20 @@
+@import './colors.scss';
+
+.button {
+    background: $greenPrimary;
+    color: $white;
+    display: block;
+    font-weight: 900;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all .3s ease-in;
+    text-align: center;
+
+    &:hover {
+        background: $greenSecundary;
+    }
+
+    &__small {
+        max-width: 300px;
+    }
+}

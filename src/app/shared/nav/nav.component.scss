@@ -1,11 +1,11 @@
-@import '../../../assets/styles/colores.scss';
+@import '../../../assets/styles/colors.scss';
 
-.navegacion__principal {
-    border-color: #e1e1e1;
+.navigation {
+    border-color: $grayMedium;
     border-top-style: solid;
     border-width: 1px;
 
-    &-contenedor {
+    &__container {
         padding: 20px 0px;
         text-align: center;
         display: flex;

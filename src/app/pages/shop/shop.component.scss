@@ -1,0 +1,34 @@
+@import '../../../assets/styles/colors.scss';
+
+.shop-page {
+    margin-bottom: 40px;
+    
+    h2 {
+        text-align: center;
+    }
+    
+    h3 {
+        margin-top: 0;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    &__item {
+        background: $base;
+    }
+
+    &__text {
+        text-align: center;
+        color: $white;
+        padding: 20px;
+    }
+
+    &__text-price {
+        font-size: 24px;
+        font-weight: 900;
+    }
+}

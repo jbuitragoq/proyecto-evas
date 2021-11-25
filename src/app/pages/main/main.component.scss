@@ -1,14 +1,14 @@
-@import '../../../assets/styles/colores.scss';
+@import '../../../assets/styles/colors.scss';
 
 .hero {
-    background-image: url(../../../assets/images/principal.jpg);
+    background-image: url(../../../assets/images/main.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
 }
 
-.categoria {
+.category {
     margin-bottom: 50px;
 
     h2 {
@@ -16,7 +16,7 @@
         text-align: center;
     }
 
-    &__contenido {
+    &__content {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -34,31 +34,31 @@
         background: $base;
 
         a {
-            color: $blanco;
+            color: $white;
         }
     }
 }
 
-.nosotros {
-    background-image: linear-gradient(to right, transparent 50%, $base 50%, $base 100%), url(../../../assets/images/nosotros.jpg);
+.us {
+    background-image: linear-gradient(to right, transparent 50%, $base 50%, $base 100%), url(../../../assets/images/us.jpg);
     background-position: left center;
     background-size: 100%, 900px;
     background-repeat: no-repeat;
     padding: 100px 0px;
 
-    &__contenido {
+    &__content {
         display: flex;
         justify-content: flex-end;
     }
 
-    &__elemento {
+    &__element {
         flex-basis: 50%;
         padding: 0px 0px 0px 60px;
-        color: $blanco;
+        color: $white;
     }
 }
 
-.productos {
+.products {
     margin-bottom: 50px;
     
     h2 {
@@ -70,7 +70,7 @@
         margin-top: 0;
     }
 
-    &__lista {
+    &__list {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 20px;
@@ -127,13 +127,13 @@
         }
     }
 
-    &__texto {
+    &__text {
         text-align: center;
-        color: $blanco;
+        color: $white;
         padding: 20px;
     }
 
-    &__texto-precio {
+    &__text-price {
         font-size: 24px;
         font-weight: 900;
     }

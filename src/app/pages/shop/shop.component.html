@@ -1,0 +1,14 @@
+<div class="shop-page container">
+    <h2>Tienda</h2>
+    <section class="shop-page__list">
+        <div *ngFor="let product of productList" class="shop-page__item">
+            <img src="../../assets/images/{{ product.image }}" alt="Imagen {{ product.name }}">
+            <div class="shop-page__text">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <p class="shop-page__text-price">{{ product.price }}</p>
+                <a class="button" href="#">Agregar al Carrito</a>
+            </div>
+        </div>
+    </section>
+</div>

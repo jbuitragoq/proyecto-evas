@@ -1,14 +1,14 @@
-@import '../../../assets/styles/colores.scss';
+@import '../../../assets/styles/colors.scss';
 
-.main-footer {
-    background-color: $grisPrimario;
+.footer-main {
+    background-color: $grayPrimary;
     text-align: center;
 
-    &__bloque {
+    &__block {
         display: grid;
         padding: 20px 0px;
         grid-template-columns: repeat(3, 1fr);
-        border-bottom: 1px solid $grisSecundario;
+        border-bottom: 1px solid $graySecundary;
     }
 
     a {
