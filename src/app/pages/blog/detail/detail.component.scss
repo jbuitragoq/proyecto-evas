@@ -1,11 +1,7 @@
 @import '../../../../assets/styles/colors.scss';
 
 .blog-detail {
-    padding: 0px 250px;
-
-    h2 {
-        text-align: center;
-    }
+    max-width: 650px;
 
     article {
         margin-bottom: 25px;

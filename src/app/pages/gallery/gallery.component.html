@@ -1,0 +1,10 @@
+<div class="gallery-page container">
+    <h2 class="text-center">Galería</h2>
+    <ul>
+        <li *ngFor="let image of listImages">
+            <a href="{{ '../../../assets/images/' + image.image }}">
+                <img src="{{ '../../../assets/images/' + image.image }}" alt="{{ 'Imagen Galería' + image.id }}">
+            </a>
+        </li>
+    </ul>
+</div>

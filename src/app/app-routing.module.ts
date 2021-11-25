@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/blog/blog.module').then(mod => mod.BlogModule)
   },
   {
+    path: 'gallery',
+    loadChildren: () => import('./pages/gallery/gallery.module').then(mod => mod.GalleryModule)
+  },
+  {
     path: '**', redirectTo: 'home', pathMatch: 'full'
   },
   {

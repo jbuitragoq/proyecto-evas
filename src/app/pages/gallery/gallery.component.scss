@@ -1,0 +1,18 @@
+.gallery-page {
+    margin-bottom: 40px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    img {
+        height: 300px;
+        width: 400px;
+        object-fit: cover;
+    }
+}
