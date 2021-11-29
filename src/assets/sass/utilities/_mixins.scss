@@ -1,0 +1,15 @@
+// Use: @include e(element) {}
+// Return: __element
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+// Use: @include m(modifier) {}
+// Return: --modifier
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}

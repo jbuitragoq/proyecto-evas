@@ -1,0 +1,7 @@
+.page-contact {
+    margin-bottom: 40px;
+
+    @include e(button) {
+        margin-top: 20px;
+    }
+}

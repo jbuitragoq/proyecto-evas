@@ -1,8 +1,8 @@
-@import '../../../assets/styles/colors.scss';
+@import '../../../assets/sass/utilities/colors';
 
 .blog-page {
 
-    &__container {
+    @include e(container) {
         display: grid;
         grid-template-columns: 3fr 1fr;
         gap: 40px;

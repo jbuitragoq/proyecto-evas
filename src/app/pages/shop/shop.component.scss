@@ -1,4 +1,4 @@
-@import '../../../assets/styles/colors.scss';
+@import '../../../assets/sass/utilities/colors';
 
 .shop-page {
     margin-bottom: 40px;
@@ -7,23 +7,23 @@
         margin-top: 0;
     }
 
-    &__list {
+    @include e(list) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
 
-    &__item {
+    @include e(item) {
         background: $base;
     }
 
-    &__text {
+    @include e(text) {
         text-align: center;
         color: $white;
         padding: 20px;
     }
 
-    &__text-price {
+    @include e(price) {
         font-size: 24px;
         font-weight: 900;
     }

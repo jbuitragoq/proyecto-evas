@@ -23,6 +23,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/gallery/gallery.module').then(mod => mod.GalleryModule)
   },
   {
+    path: 'contact',
+    loadChildren: () => import('./pages/contact/contact.module').then(mod => mod.ContactModule)
+  },
+  {
     path: '**', redirectTo: 'home', pathMatch: 'full'
   },
   {

@@ -1,0 +1,44 @@
+@import '../utilities/typography';
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fontPrimary;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: $fontSecondary;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+p {
+    line-height: 25px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}

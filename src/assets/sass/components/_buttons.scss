@@ -1,4 +1,5 @@
-@import './colors.scss';
+@import '../utilities/colors';
+@import '../utilities/mixins';
 
 .button {
     background: $greenPrimary;
@@ -15,7 +16,7 @@
         background: $greenSecundary;
     }
 
-    &__small {
+    @include e(small) {
         max-width: 300px;
     }
 }

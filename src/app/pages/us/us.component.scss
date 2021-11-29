@@ -1,13 +1,13 @@
 .us-page {
 
-    &__container {
+    @include e(container) {
         display: grid;
         column-gap: 40px;
         grid-template-columns: 1fr 2fr;
         margin-bottom: 40px;
     }
     
-    &__information {
+    @include e(information) {
         display: flex;
         flex-direction: column;
         justify-content: center;

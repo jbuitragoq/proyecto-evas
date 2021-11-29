@@ -1,4 +1,4 @@
-@import '../../../assets/styles/colors.scss';
+@import '../../../assets/sass/utilities/colors';
 
 .hero {
     background-image: url(../../../assets/images/main.jpg);
@@ -16,25 +16,27 @@
         text-align: center;
     }
 
-    &__content {
+    @include e(content) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
 
-    &__item a {
-        text-align: center;
-        display: block;
-        padding: 20px;
-    }
-
-    &__item:hover {
-        cursor: pointer;
-        border-bottom-right-radius: 10px;
-        background: $base;
-
+    @include e (item) {
         a {
-            color: $white;
+            text-align: center;
+            display: block;
+            padding: 20px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border-bottom-right-radius: 10px;
+            background: $base;
+    
+            a {
+                color: $white;
+            }
         }
     }
 }
@@ -46,12 +48,12 @@
     background-repeat: no-repeat;
     padding: 100px 0px;
 
-    &__content {
+    @include e(content) {
         display: flex;
         justify-content: flex-end;
     }
 
-    &__element {
+    @include e(element) {
         flex-basis: 50%;
         padding: 0px 0px 0px 60px;
         color: $white;
@@ -70,13 +72,13 @@
         margin-top: 0;
     }
 
-    &__list {
+    @include e(list) {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 20px;
     }
 
-    &__item {
+    @include e(item) {
         background: $base;
 
         &:nth-child(1) {
@@ -127,13 +129,13 @@
         }
     }
 
-    &__text {
+    @include e(text) {
         text-align: center;
         color: $white;
         padding: 20px;
     }
 
-    &__text-price {
+    @include e(price) {
         font-size: 24px;
         font-weight: 900;
     }
