@@ -1,10 +1,11 @@
 @import '../../../assets/sass/utilities/colors';
+@import '../../../assets/sass/utilities/mixins';
 
 .footer-main {
     background-color: $grayPrimary;
     text-align: center;
 
-    &__block {
+    @include e(block) {
         display: grid;
         padding: 20px 0px;
         grid-template-columns: repeat(3, 1fr);

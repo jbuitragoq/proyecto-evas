@@ -1,11 +1,12 @@
 @import '../../../assets/sass/utilities/colors';
+@import '../../../assets/sass/utilities/mixins';
 
 .navigation {
     border-color: $grayMedium;
     border-top-style: solid;
     border-width: 1px;
 
-    &__container {
+    @include e(container) {
         padding: 20px 0px;
         text-align: center;
         display: flex;

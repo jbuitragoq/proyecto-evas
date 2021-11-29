@@ -1,9 +1,13 @@
-.header__title {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
+@import '../../../assets/sass/utilities/mixins';
 
-    span {
-        color: #037bc0;
+.header {
+    @include e(title) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+    
+        span {
+            color: #037bc0;
+        }
     }
 }
