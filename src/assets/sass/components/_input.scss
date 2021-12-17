@@ -1,0 +1,32 @@
+@import '../utilities/module';
+
+.input {
+    font-family: $fontPrimary;
+    border: 1px solid $grayMedium;
+    background-color: white;
+    padding: 10px 15px;
+    margin-top: 5px;
+    font-size: 16px;
+    width: 100%;
+    color: $text;
+    outline: none;
+    border-radius: 7px;
+
+    @include e(radio) {
+        border: none;
+        width: auto;
+    }
+
+    @include e(textarea) {
+        resize: none;
+        height: 142px;
+        overflow-y: hidden;
+    }
+
+    @include e(select) {
+        &::after {
+            right: 5px;
+            margin: 5px;
+        }
+    }
+}

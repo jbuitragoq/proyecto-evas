@@ -8,6 +8,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
+  public categories = [
+    { id: 0, value: 'Cocina'},
+    { id: 1, value: 'Exterior'},
+    { id: 2, value: 'Recámara'},
+    { id: 3, value: 'Oficina'},
+    { id: 4, value: 'Televisión'}
+  ];
+
   public formContact: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
@@ -18,7 +26,7 @@ export class ContactComponent implements OnInit {
       telephone: ['', Validators.required],
       message: ['', Validators.required],
       country: ['', Validators.required],
-      client: [false, Validators.required],
+      client: ['true', Validators.required],
       supplier: [false, Validators.required]
     });
     this.formContact.controls.client.valueChanges.subscribe(() => {

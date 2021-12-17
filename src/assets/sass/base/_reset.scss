@@ -1,4 +1,4 @@
-@import '../utilities/typography';
+@import '../utilities/module';
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -18,15 +18,24 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 30px;
+    @include mq-min(sm) {
+        font-size: 40px;
+    }
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 20px;
+    @include mq-min(sm) {
+        font-size: 30px;
+    }
 }
 
 h3 {
-    font-size: 20px;
+    font-size: 10px;
+    @include mq-min(sm) {
+        font-size: 20px;
+    }
 }
 
 a {

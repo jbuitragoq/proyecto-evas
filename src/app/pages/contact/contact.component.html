@@ -3,49 +3,62 @@
     <form [formGroup]="formContact" (keydown.enter)="$event.preventDefault()">
         <fieldset>
             <legend>Datos Personales</legend>
-            <div>
-                <label for="name">Nombre:</label>
-                <input id="name" type="text" placeholder="" formControlName="name"/>
-            </div>
-            <div>
-                <label for="issue">Asunto:</label>
-                <input id="issue" type="text" placeholder="" formControlName="issue"/>
-            </div>
-            <div>
-                <label for="email">Correo electrónico:</label>
-                <input id="email" type="email" placeholder="" formControlName="email"/>
-            </div>
-            <div>
-                <label for="telephone">Teléfono:</label>
-                <input id="telephone" type="tel" placeholder="" formControlName="telephone"/>
-            </div>
-            <div>
-                <label for="message">Mensaje:</label>
-                <textarea id="message" formControlName="message"></textarea>
+            <div class="page-contact__group">
+                <div class="page-contact__group--field">
+                    <label for="contact-name">Nombre:</label>
+                    <input id="contact-name" type="text" placeholder="" class="input" formControlName="name" autocomplete="off"/>
+                </div>
+                <div class="page-contact__group--field">
+                    <label for="contact-issue">Asunto:</label>
+                    <input id="contact-issue" type="text" placeholder="" class="input" formControlName="issue" autocomplete="off"/>
+                </div>
+                <div class="page-contact__group--field">
+                    <label for="contact-email">Correo electrónico:</label>
+                    <input id="contact-email" type="email" placeholder="" class="input" formControlName="email" autocomplete="off"/>
+                </div>
+                <div class="page-contact__group--field">
+                    <label for="contact-telephone">Teléfono:</label>
+                    <input id="contact-telephone" type="tel" placeholder="" class="input" formControlName="telephone" autocomplete="off"/>
+                </div>
+                <div class="page-contact__group--field last-child">
+                    <label for="contact-message">Mensaje:</label>
+                    <textarea idcontact-="message" class="input input__textarea" formControlName="message"></textarea>
+                </div>
             </div>
         </fieldset>
 
         <fieldset>
             <legend>Ubicación</legend>
-            <div>
-                <label for="country"></label>
-                <select id="country" name="country" formControlName="country">
-                    <option value="" selected disabled>Seleccione</option>
-                    <option value="100">Colombia</option>
-                    <option value="101">Argentina</option>
-                </select>
+            <div class="page-contact__group">
+                <div class="page-contact__group--field">
+                    <label for="contact-country">País:</label>
+                    <select id="contact-country" name="country" class="input input__select" formControlName="country">
+                        <option value="" selected disabled>Seleccione</option>
+                        <option value="100">Colombia</option>
+                        <option value="101">Argentina</option>
+                    </select>
+                </div>
             </div>
         </fieldset>
 
         <fieldset>
             <legend>Información Adicional</legend>
-            <div>
-                <label for="client">Cliente</label>
-                <input id="client" type="radio" value="true" formControlName="client">
-            </div>
-            <div>
-                <label for="supplier">Proveedor</label>
-                <input id="supplier" type="radio" value="true" formControlName="supplier">
+            <div class="page-contact__group">
+                <div class="page-contact__group--field">
+                    <label for="contact-client">Cliente</label>
+                    <input id="contact-client" type="radio" value="true" class="input-radio" formControlName="client">
+                </div>
+                <div class="page-contact__group--field">
+                    <label for="contact-supplier">Proveedor</label>
+                    <input id="contact-supplier" type="radio" value="true" class="input-radio" formControlName="supplier">
+                </div>
+                <div class="page-contact__group--field category-div">
+                    <label for="contact-category">Categoría de Interés</label>
+                    <input id="contact-category" name="categories" list="categories" class="input">
+                    <datalist id="categories">
+                        <option *ngFor="let category of categories" value="{{ category.value }}">
+                    </datalist>
+                </div>
             </div>
         </fieldset>
 

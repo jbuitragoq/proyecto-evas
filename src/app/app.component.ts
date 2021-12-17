@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ecommerce';
+
+  list = [
+    { title: 'test', color: 'blue', imgUrl: ''},
+    { title: 'test', color: 'green', imgUrl: ''},
+    { title: 'test', color: 'red', imgUrl: ''},
+    { title: 'test', color: 'blue', imgUrl: ''},
+    { title: 'test', color: 'green', imgUrl: ''},
+    { title: 'test', color: 'red', imgUrl: ''}
+  ]
 }

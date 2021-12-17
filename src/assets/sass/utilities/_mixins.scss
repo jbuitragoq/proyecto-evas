@@ -1,5 +1,41 @@
+@import 'variables';
+
+// ===========================================
+// Media Querys
+// ===========================================
+
+// Use: @include mq-min(xs) {}
+// Return: @media (min-width: 550px) {}
+@mixin mq-min($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+        @media (min-width: $value) {
+            @content;
+        }
+    } @else {
+
+    }
+}
+
+// Use: @include mq-max(xs) {}
+// Return: @media (max-width: 550px) {}
+@mixin mq-max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+        @media (max-width: $value) {
+            @content;
+        }
+    } @else {
+
+    }
+}
+
+// ===========================================
+// Mixins BEM selectors
+// ===========================================
+
 // Use: @include e(element) {}
-// Return: __element
+// Return: &__element {}
 @mixin e($element) {
     &__#{$element} {
         @content;
@@ -7,7 +43,7 @@
 }
 
 // Use: @include m(modifier) {}
-// Return: --modifier
+// Return: &--modifier {}
 @mixin m($modifier) {
     &--#{$modifier} {
         @content;

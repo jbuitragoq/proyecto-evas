@@ -1,7 +1,42 @@
 @import '../../../assets/sass/utilities/mixins';
+@import '../../../assets/sass/utilities/colors';
 
 .page-contact {
     margin-bottom: 40px;
+
+    form {
+        max-width: 750px;
+        margin: 0px auto;
+    }
+
+    fieldset {
+        padding-bottom: 25px;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        border: 1px solid $graySecundary;
+    }
+
+    @include e(group) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include m(field) {
+            padding: 10px 15px 0px 15px;
+
+            label {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .category-div {
+        margin-top: 15px;
+    }
+
+    .last-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 
     @include e(button) {
         margin-top: 20px;

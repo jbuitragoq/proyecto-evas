@@ -1,33 +1,43 @@
 @import '../../../assets/sass/utilities/colors';
 @import '../../../assets/sass/utilities/mixins';
 
+h2 {
+    margin: 30px 0px 20px 0px;
+    text-align: center;
+
+    @include mq-min(sm) {
+        margin: 50px 0px;
+    }
+}
+
 .hero {
     background-image: url(../../../assets/images/main.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 600px;
+    height: 250px;
+
+    @include mq-min(sm) {
+        height: 600px;
+    }
 }
 
 .category {
-    margin-bottom: 50px;
-
-    h2 {
-        margin: 50px 0px;
-        text-align: center;
-    }
+    margin-bottom: 20px;
 
     @include e(content) {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 0px;
     }
+    
+    @include e(item) {
+        margin-bottom: 10px;
 
-    @include e (item) {
         a {
             text-align: center;
             display: block;
-            padding: 20px;
+            padding: 10px 0px;
         }
 
         &:hover {
@@ -42,32 +52,74 @@
     }
 }
 
+@include mq-min(sm) {
+    .category {
+        margin-bottom: 50px;
+
+        @include e(content) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        @include e(item) {
+            margin: 0;
+            a {
+                padding: 20px;
+            }
+        }
+    }
+}
+
 .us {
-    background-image: linear-gradient(to right, transparent 50%, $base 50%, $base 100%), url(../../../assets/images/us.jpg);
-    background-position: left center;
-    background-size: 100%, 900px;
+    background-image: linear-gradient(to bottom, transparent 50%, $base 50%, $base 100%), url(../../../assets/images/us.jpg);
+    background-position: center, bottom center;
+    background-size: 100%, 750px;
     background-repeat: no-repeat;
-    padding: 100px 0px;
+    padding: 15px;
+
+    h2 {
+        margin: 25px 0px 0px 0px;
+    }
 
     @include e(content) {
-        display: flex;
-        justify-content: flex-end;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
     }
 
     @include e(element) {
-        flex-basis: 50%;
-        padding: 0px 0px 0px 60px;
+        grid-row-start: 2;
+        text-align: center;
         color: $white;
+    }
+}
+
+@include mq-min(sm) {
+    .us {
+        background-image: linear-gradient(to right, transparent 50%, $base 50%, $base 100%), url(../../../assets/images/us.jpg);
+        background-position: left, center;
+        background-size: 100%, 1050px;
+        background-repeat: no-repeat;
+        padding: 100px 0px;
+
+        h2 {
+            margin: 0;
+            text-align: left;
+        }
+
+        @include e(content) {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        @include e(element) {
+            flex-basis: 50%;
+            padding: 0px 0px 0px 60px;
+            text-align: left;
+        }
     }
 }
 
 .products {
     margin-bottom: 50px;
-    
-    h2 {
-        margin: 50px 0px;
-        text-align: center;
-    }
 
     h3 {
         margin-top: 0;
@@ -75,59 +127,12 @@
 
     @include e(list) {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     @include e(item) {
         background: $base;
-
-        &:nth-child(1) {
-            grid-column-start: 1;
-            grid-column-end: 7;
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-
-            img {
-                height: 430px;
-                object-fit: cover;
-            }
-        }
-
-        &:nth-child(2) {
-            grid-column-start: 1;
-            grid-column-end: 4;
-
-            img {
-                height: 280px;
-                object-fit: cover;
-            }
-        }
-
-        &:nth-child(3) {
-            grid-column-start: 4;
-            grid-column-end: 7;
-
-            img {
-                height: 280px;
-                object-fit: cover;
-            }
-        }
-
-        &:nth-child(4) {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-
-        &:nth-child(5) {
-            grid-column-start: 3;
-            grid-column-end: 5;
-        }
-
-        &:nth-child(6) {
-            grid-column-start: 5;
-            grid-column-end: 7;
-        }
     }
 
     @include e(text) {
@@ -139,5 +144,92 @@
     @include e(price) {
         font-size: 24px;
         font-weight: 900;
+    }
+}
+
+@include mq-min(xs) {
+    .products {
+        padding: 0px 10px;
+
+        @include e(list) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    }
+}
+
+@include mq-min(sm) {
+    .products {
+        padding: 0px 15px;
+
+        @include e(list) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+    }
+}
+
+@include mq-min(lg) {
+    .products {
+        padding: 0;
+
+        @include e(list) {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+    
+        @include e(item) {
+            background: $base;
+    
+            &:nth-child(1) {
+                grid-column-start: 1;
+                grid-column-end: 7;
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+    
+                img {
+                    height: 430px;
+                    object-fit: cover;
+                }
+            }
+    
+            &:nth-child(2) {
+                grid-column-start: 1;
+                grid-column-end: 4;
+    
+                img {
+                    height: 280px;
+                    object-fit: cover;
+                }
+            }
+    
+            &:nth-child(3) {
+                grid-column-start: 4;
+                grid-column-end: 7;
+    
+                img {
+                    height: 280px;
+                    object-fit: cover;
+                }
+            }
+    
+            &:nth-child(4) {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+    
+            &:nth-child(5) {
+                grid-column-start: 3;
+                grid-column-end: 5;
+            }
+    
+            &:nth-child(6) {
+                grid-column-start: 5;
+                grid-column-end: 7;
+            }
+        }
     }
 }

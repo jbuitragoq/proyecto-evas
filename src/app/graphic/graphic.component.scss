@@ -1,0 +1,40 @@
+.cake {
+    display:block;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 50%;
+    background-color: black;
+
+    .chunk {
+        top: 50%;
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        transform: rotate(var(--rotate));
+        transform-origin: top ;
+        background-color: var(--color);
+        width: var(--sideBottom);
+        shape-outside: polygon(50% 0%, 0 100%, 100% 100%);
+        clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+    
+        img {
+            max-width: 50px;
+        }
+    }
+
+    .chunk__content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .chunk__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: rotate(var(--rotateContent));
+    }
+}

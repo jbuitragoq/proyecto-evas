@@ -1,24 +1,58 @@
-@import '../../../assets/sass/utilities/colors';
-@import '../../../assets/sass/utilities/mixins';
+@import '../../../assets/sass/utilities/module';
 
 .footer-main {
     background-color: $grayPrimary;
     text-align: center;
 
+    h3 {
+        font-size: large;
+    }
+
     @include e(block) {
         display: grid;
         padding: 20px 0px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
         border-bottom: 1px solid $graySecundary;
+
+        a {
+            display: block;
+            line-height: 25px;
+        }
     }
 
-    a {
-        display: block;
-        line-height: 25px;
+    @include e(part) {
+        &:nth-child(3) div {
+            border: none;
+            margin: 0px 0px 15px 0px;
+        }
+    }
+
+    @include e(line) {
+        border-bottom: 1px solid $graySecundary;
+        margin: 4% 15% 0% 15%;
     }
 
     p {
         padding: 25px 0px;
         margin: 0;
+    }
+}
+
+@include mq-min(xs) {
+    .footer-main {
+
+        h3 {
+            font-size: large;
+        }
+
+        @include e(block) {
+            padding: 20px 0px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include e(line) {
+            border-bottom: none;
+            margin: 0;
+        }
     }
 }

@@ -11,5 +11,14 @@
         text-align: center;
         display: flex;
         justify-content: space-around;
+        flex-direction: column;
+    }
+}
+
+@include mq-min(sm) {
+    .navigation {
+        @include e(container) {
+            flex-direction: row;
+        }
     }
 }

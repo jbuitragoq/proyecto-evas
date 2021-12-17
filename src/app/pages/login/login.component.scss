@@ -1,0 +1,28 @@
+@import '../../../assets/sass/utilities/mixins';
+@import '../../../assets/sass/utilities/colors';
+
+.page-login {
+    background: $green-100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    h2 {
+        margin-top: 0;
+    }
+
+    a {
+        margin-top: 1.5rem;
+    }
+
+    @include e(container) {
+        padding: 3rem;
+        border-radius: 0.7rem;
+        background: $white-50;
+
+        div:nth-child(3) {
+            margin-top: 0.5rem;
+        }
+    }
+}
