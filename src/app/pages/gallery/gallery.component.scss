@@ -1,18 +1,49 @@
+@import '../../../assets/sass/utilities/module';
+
 .gallery-page {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 
     ul {
         list-style: none;
         padding: 0;
         margin: 0;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     img {
-        height: 300px;
-        width: 400px;
+        height: 200px;
         object-fit: cover;
+    }
+}
+
+@include mq-min(xs) {
+    .gallery-page {
+        margin-bottom: 40px;
+    
+        ul {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+@include mq-min(sm) {
+    .gallery-page {
+        margin-bottom: 40px;
+    
+        ul {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+@include mq-min(lg) {
+    .gallery-page {
+        img {
+            height: 300px;
+        }
     }
 }

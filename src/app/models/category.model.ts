@@ -1,4 +1,5 @@
 export interface CategoryModel {
     name: string,
     image: string,
+    imageOver: string
 }

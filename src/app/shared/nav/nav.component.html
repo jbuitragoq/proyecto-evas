@@ -1,10 +1,11 @@
-<div class="navigation">
+<div id="nav" class="navigation">
     <nav class="navigation__container container">
-        <a [routerLink]="['/home']">Inicio</a>
-        <a [routerLink]="['/us']">Nosotros</a>
-        <a [routerLink]="['/shop']">Tienda</a>
-        <a [routerLink]="['/blog']">Blog</a>
-        <a [routerLink]="['/gallery']">Galería</a>
-        <a [routerLink]="['/contact']">Contacto</a>
+        <img class="navigation__icon" src="../../../assets/images/logo.png" alt="logo">
+        <a [routerLink]="['/home']" (click)="scrollToStart()" routerLinkActive="active">Inicio</a>
+        <a [routerLink]="['/us']" (click)="scrollToStart()" routerLinkActive="active">Nosotras</a>
+        <a [routerLink]="['/shop']" (click)="scrollToStart()" routerLinkActive="active">Tienda</a>
+        <a [routerLink]="['/blog']" (click)="scrollToStart()" routerLinkActive="active">Blog</a>
+        <a [routerLink]="['/gallery']" (click)="scrollToStart()" routerLinkActive="active">Galería</a>
+        <a [routerLink]="['/contact']" (click)="scrollToStart()" routerLinkActive="active">Contacto</a>
     </nav>
 </div>

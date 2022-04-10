@@ -1,22 +1,53 @@
-@import '../../../assets/sass/utilities/mixins';
+@import '../../../assets/sass/utilities/module';
 
 .header {
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include e(icon) {
+        cursor: pointer;
+        max-width: 5rem;
+    }
+
     @include e(title) {
-        margin-top: 30px;
-        margin-bottom: 30px;
+        display: none;
         text-align: center;
-    
-        span {
-            color: #037bc0;
+        color: $complementaryBase;
+    }
+
+    @include e(social) {
+        display: flex;
+        gap: 0.3rem;
+        
+        i {
+            font-size: 1.5rem;
+            color: $complementaryBase;
+            cursor: pointer;
+            transition: color 0.2s ease-in;
+        }
+
+        i:hover {
+            color: $secondaryBase;
         }
     }
 }
 
 @include mq-min(sm) {
     .header {
-        @include e(title) {
-            margin-top: 50px;
-            margin-bottom: 50px;
+        @include e(icon) {
+            max-width: 8rem;
         }
-    }   
+
+        @include e(title) {
+            display: inline;
+        }
+
+        @include e(social) {
+            i {
+                font-size: 1.2rem;
+            }   
+        }
+    }
 }

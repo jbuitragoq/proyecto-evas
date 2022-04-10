@@ -1,25 +1,30 @@
-@import '../../../assets/sass/utilities/colors';
-@import '../../../assets/sass/utilities/mixins';
+@import '../../../assets/sass/utilities/module';
 
 .blog-page {
 
+    h2 {
+        margin-top: 0px;
+    }
+
     @include e(container) {
         display: grid;
-        grid-template-columns: 3fr 1fr;
-        gap: 40px;
+        grid-template-columns: 1fr;
     }
 
     article {
-        margin-bottom: 25px;
-        padding-bottom: 25px;
+        padding: 20px;
+        margin-bottom: 15px;
         border-bottom: 2px solid $grayMedium;
 
+        .image {
+            margin: 0px -20px;
+        }
+
         .meta {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            margin-top: 16px;
 
             p {
+                margin: 0;
                 font-weight: 700;
             }
 
@@ -32,4 +37,61 @@
             border: none;
         }
     }
+
+    a {
+        margin: auto;
+    }
+
+    aside {
+        padding: 0px 20px;
+        margin-bottom: 30px;
+    }
+}
+
+@include mq-min(xs) {
+    .blog-page {
+        a {
+            margin: 0;
+        }
+    }
+}
+
+@include mq-min(sm) {
+    .blog-page {
+
+        h2 {
+            margin-top: 24.9px;
+        }
+
+        @include e(container) {
+            grid-template-columns: 3fr 1fr;
+            padding: 0px 20px;
+            gap: 40px;
+        }
+
+        article {
+            padding: 0px 0px 25px 0px;
+            margin-bottom: 25px;
+
+            .image {
+                margin: 0px;
+            }
+
+            .meta {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 0px;
+
+                p {
+                    margin: 16px 0px;
+                }
+            }
+        }
+
+        aside {
+            padding: 0px;
+            margin-bottom: 0px;
+        }
+    }    
 }

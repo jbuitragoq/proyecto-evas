@@ -1,31 +1,70 @@
-@import '../../../assets/sass/utilities/colors';
-@import '../../../assets/sass/utilities/mixins';
+@import '../../../assets/sass/utilities/module';
 
 .shop-page {
     margin-bottom: 40px;
-    
-    h3 {
-        margin-top: 0;
-    }
 
     @include e(list) {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     @include e(item) {
-        background: $base;
+        &:hover {
+            cursor: pointer;
+            border-bottom-right-radius: 10px;
+            background: $secondaryBase;
+            transition: all 0.2s ease;
+        }
     }
 
     @include e(text) {
         text-align: center;
-        color: $white;
-        padding: 20px;
+        padding: 10px;
+
+        h3 {
+            margin: 0;
+        }
+    
+        p {
+            margin: 0;
+        }
     }
 
     @include e(price) {
-        font-size: 24px;
-        font-weight: 900;
+        font-size: 17px;
+    }
+}
+
+@include mq-min(xs) {
+    .shop-page {
+        padding: 0px 5px;
+        
+        @include e(list) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+    }
+}
+
+@include mq-min(sm) {
+    .shop-page {
+        padding: 0px 7px;
+
+        @include e(list) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+    }
+}
+
+@include mq-min(lg) {
+    .shop-page {
+        padding: 0px 10px;
+
+        @include e(list) {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
     }
 }

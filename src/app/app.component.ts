@@ -6,14 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ecommerce';
-
-  list = [
-    { title: 'test', color: 'blue', imgUrl: ''},
-    { title: 'test', color: 'green', imgUrl: ''},
-    { title: 'test', color: 'red', imgUrl: ''},
-    { title: 'test', color: 'blue', imgUrl: ''},
-    { title: 'test', color: 'green', imgUrl: ''},
-    { title: 'test', color: 'red', imgUrl: ''}
-  ]
+  title = 'evas';
 }

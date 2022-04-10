@@ -1,10 +1,34 @@
-<div class="hero"></div>
+<section class="carousel">
+    <input type="radio" name="slider" [id]="item.id" [checked]="idx === 0" *ngFor="let item of slideList; let idx = index" (click)="selectSlide(idx)">
+    <div class="carousel__container">
+        <div class="carousel__slides" [ngStyle]="{'margin-left': slideMargin, 'width': slidesWidth}">
+            <div class="slide" [ngClass]="item.class" [ngStyle]="{'background-image': 'url(../../assets/images/' + item.backgroundImage + ')', 'width': slideWidth}" *ngFor="let item of slideList">
+                <div class="slide-content">
+                    <div class="slide-subcontent">
+                        <h1 *ngIf="item.type === 1">{{ item.title }}</h1>
+                        <p>{{ item.description }}</p>
+                    </div>
+                    <div class="slide-subcontent" [ngStyle]="{'grid-column-start': item.posImage}">
+                        <img *ngIf="item.type === 1" src="../../../assets/images/{{ item.image }}" alt="Imagen {{ item.image }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="carousel__controls">
+        <label [for]="item.id" [ngClass]="{'child-right': idx === slideNext, 'child-left': idx === slidePrevious}" *ngFor="let item of slideList; let idx = index"></label>
+    </div>
+    <div class="carousel__bullets">
+        <label [for]="item.id" [ngClass]="{'child-selected': idx === slideSelected}" *ngFor="let item of slideList; let idx = index"></label>
+    </div>
+</section>
 
 <section class="category container">
     <h2>Categorías de Productos</h2>
     <div class="category__content">
-        <div *ngFor="let category of categoryList" class="category__item">
-            <img src="../../assets/images/{{ category.image }}" alt="Imagen {{ category.name }}">
+        <div *ngFor="let category of categoryList" class="category__item" (mouseover)="overCategory(category)" (mouseout)="overCategory(undefined)">
+            <img *ngIf="category !== categoryOver" src="../../assets/images/{{ category.image }}" alt="Imagen {{ category.name }}">
+            <img *ngIf="category === categoryOver" src="../../assets/images/{{ category.imageOver }}" alt="Imagen {{ category.name }}">
             <a>{{ category.name }}</a>
         </div>
     </div>
@@ -13,7 +37,7 @@
 <section class="us">
     <div class="us__content container">
         <div class="us__element">
-            <h2>Sobre Nosotros</h2>
+            <h2>Sobre Nosotras</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero illo autem incidunt natus! Corrupti delectus enim mollitia veniam officia repellat harum optio sequi fugiat quae fuga aperiam, repellendus error dolores?</p>
         </div>
     </div>
@@ -26,9 +50,7 @@
             <img src="../../assets/images/{{ product.image }}" alt="Imagen {{ product.name }}">
             <div class="products__text">
                 <h3>{{ product.name }}</h3>
-                <p>{{ product.description }}</p>
                 <p class="products__price">{{ product.price }}</p>
-                <a class="button" href="#">Agregar al Carrito</a>
             </div>
         </div>
     </div>
